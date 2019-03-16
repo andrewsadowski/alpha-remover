@@ -1,0 +1,11 @@
+{
+  "name": "alpha-remover",
+  "version": "1.0.0",
+  "description": "Remove alpha channel from pngs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Sadowski",
+  "license": "MIT"
+}
