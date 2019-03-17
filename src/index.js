@@ -1,4 +1,15 @@
 const shell = require("shelljs");
+const fs = require("fs");
+const path = require("path");
+
+/**
+ * Main thread
+ */
+const main = () => {
+  if (depCheck()) {
+    shell.exec;
+  }
+};
 
 /**
  * Function checks if necessary dependencies are installed
