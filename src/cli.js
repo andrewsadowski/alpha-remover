@@ -3,16 +3,13 @@ const meow = require("meow");
 const cli = meow(
   `
 	Usage
-	  $ alphaRemover --flag [input]
-
+	  $ alphaRemover --flag [file/directory absolute path]
 	Options
-	  --dir  Lorem ipsum [Default: false]
-
+    --file, -f Absolute path to file
+    --dir, -d Absolute path to directory
 	Examples
-		$ testModule 
-		unicorns & rainbows
-	  $ testModule ponies
-	  ponies & rainbows
+	  $ 'alphaRemover -f "/absolute/path/to/file.png"'
+	  $ 'alphaRemover -d "/absolute/path/of/dir/"'
 `,
   {
     flags: {
