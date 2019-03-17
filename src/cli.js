@@ -3,10 +3,10 @@ const meow = require("meow");
 const cli = meow(
   `
 	Usage
-	  $ testModule --flag [input]
+	  $ alphaRemover --flag [input]
 
 	Options
-	  --foo  Lorem ipsum [Default: false]
+	  --dir  Lorem ipsum [Default: false]
 
 	Examples
 		$ testModule 
