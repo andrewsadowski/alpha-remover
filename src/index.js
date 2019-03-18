@@ -11,16 +11,6 @@ const main = pathToContent => {
   }
 };
 
-const isDirOrFile = content => {
-  let typeOfContent;
-  if (!path.extname(content)) {
-    typeOfContent = "file";
-  } else {
-    typeOfContent = "dir";
-  }
-  return typeOfContent;
-};
-
 /**
  * Function checks if necessary dependencies are installed
  */
