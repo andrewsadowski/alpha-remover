@@ -5,10 +5,20 @@ const path = require("path");
 /**
  * Main thread
  */
-const main = () => {
+const main = pathToContent => {
   if (depCheck()) {
     shell.exec;
   }
+};
+
+const isDirOrFile = content => {
+  let typeOfContent;
+  if (!path.extname(content)) {
+    typeOfContent = "file";
+  } else {
+    typeOfContent = "dir";
+  }
+  return typeOfContent;
 };
 
 /**
