@@ -20,6 +20,8 @@ const depCheck = () => {
     shell.echo("imageMagic is not installed");
     isIMinstalled = false;
     shell.exit(1);
+  } else {
+    isIMinstalled = true;
   }
   return isIMinstalled;
 };
