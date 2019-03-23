@@ -21,6 +21,11 @@ const isDirOrFile = content => {
   return typeOfContent;
 };
 
+/**
+ *
+ * @param {string} dirPath
+ * @return {array} returns an array of all files in dir
+ */
 const getFilesFromDir = dirPath => fs.readdirSync(dirPath);
 
 module.exports = {
