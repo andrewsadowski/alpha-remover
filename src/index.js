@@ -1,6 +1,7 @@
 const shell = require("shelljs");
 const fs = require("fs");
 const path = require("path");
+const chalk = require("chalk");
 
 const { getFilesFromDir } = require("./utils.js");
 
@@ -32,6 +33,19 @@ const main = pathToContent => {
     let filesArr = getFilesFromDir(pathToContent);
     filesArr.splice(filesArr.indexOf(".DS_Store"), 1);
     console.log(filesArr);
+
+    filesArr.forEach(file => {
+      shell.exec(
+        `convert ${path.join(
+          pathToContent,
+          file
+        )} -background white -alpha remove -alpha off ${path.join(
+          pathToContent,
+          file
+        )}`
+      );
+      console.log();
+    });
   }
 };
 
