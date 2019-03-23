@@ -2,12 +2,15 @@ const shell = require("shelljs");
 const fs = require("fs");
 const path = require("path");
 
+const { getFilesFromDir } = require("./utils.js");
+
 /**
  * Main thread
  */
 const main = pathToContent => {
-  if (depCheck()) {
-    shell.exec;
+  const checkDeps = depCheck();
+  if (checkDeps) {
+    let filesArr = getFilesFromDir(pathToContent);
   }
 };
 
