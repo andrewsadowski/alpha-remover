@@ -2,10 +2,13 @@
   "name": "alpha-remover",
   "version": "1.0.0",
   "description": "Remove alpha channel from pngs",
+  "url": "https://github.com/andrewsadowski/alpha-remover",
+  "repository": "andrewsadowski/alpha-remover",
   "main": "src/cli.js",
   "bin": {
     "alphaRemover": "./bin/alpha-remover.js"
   },
+  "preferGlobal": true,
   "scripts": {
     "start": "nodemon src/cli.js --",
     "test": "jest --watchAll"

@@ -18,12 +18,12 @@ const depCheck = () => {
     shell.echo(`Homebrew was installed`);
   }
   if (!shell.which("convert")) {
-    shell.echo("imageMagick is not installed");
+    shell.echo("ImageMagick is being installed");
     shell.exec("brew install imageMagick", { silent: true });
     isIMinstalled = true;
     // shell.exit(1);
   } else {
-    shell.echo("imageMagick is installed");
+    // shell.echo("imageMagick is installed");
     isIMinstalled = true;
   }
   return isIMinstalled;
