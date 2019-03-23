@@ -16,8 +16,8 @@ const main = pathToContent => {
  */
 const depCheck = () => {
   let isIMinstalled;
-  if (shell.exec("imagemagick -v").code !== 0) {
-    shell.echo("imageMagic is not installed");
+  if (shell.exec("convert -v").code !== 0) {
+    shell.echo("imageMagick is not installed");
     isIMinstalled = false;
     shell.exit(1);
   } else {
