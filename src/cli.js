@@ -1,28 +1,14 @@
 const meow = require("meow");
+const { main } = require("./index.js");
 
 const cli = meow(
   `
 	Usage
-	  $ alphaRemover --flag [file/directory absolute path]
-	Options
-    --file, -f Absolute path to file
-    --dir, -d Absolute path to directory
+	  $ alphaRemover [directory's absolute path]
+
 	Examples
-	  $ 'alphaRemover -f "/absolute/path/to/file.png"'
-	  $ 'alphaRemover -d "/absolute/path/of/dir/"'
-`,
-  {
-    flags: {
-      file: {
-        type: "string",
-        alias: "f"
-      },
-      dir: {
-        type: "string",
-        alias: "d"
-      }
-    }
-  }
+	  $ 'alphaRemover "/absolute/path/of/dir/"'
+`
 );
 
-console.log(cli.input[0], cli.flags);
+main(cli.input[0]);
