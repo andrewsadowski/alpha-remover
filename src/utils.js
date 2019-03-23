@@ -21,11 +21,4 @@ const isDirOrFile = content => {
   return typeOfContent;
 };
 
-const getFilesFromDir = async dirPath => {
-  let fileArr = [];
-  await fs.readdir(dirPath, (err, files) => {
-    if (err) console.log(err);
-    files.forEach(file => fileArr.push(file));
-  });
-  return fileArr;
-};
+const getFilesFromDir = dirPath => fs.readdirSync(dirPath);
