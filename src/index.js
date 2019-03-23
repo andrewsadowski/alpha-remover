@@ -10,6 +10,13 @@ const { getFilesFromDir } = require("./utils.js");
  */
 const depCheck = () => {
   let isIMinstalled;
+  if (!shell.which("brew")) {
+    shell.echo("You need Homebrew to use this tool!");
+    shell.exec(
+      `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+    );
+    shell.echo(`Homebrew was installed`);
+  }
   if (!shell.which("convert")) {
     shell.echo("imageMagick is not installed");
     shell.exec("brew install imageMagick", { silent: true });
@@ -44,20 +51,23 @@ const main = pathToContent => {
           file
         )}`
       );
-      console.log();
     });
+    return console.log(
+      chalk.blue(
+        `Alpha channel removed for all .png files\nin ${pathToContent}`
+      )
+    );
   }
 };
 
-console.log(
-  main(
-    "/Users/andrewsadowski/dev/node-projects/alpha-remover/src/__tests__/test_dir"
-  )
+main(
+  "/Users/andrewsadowski/dev/node-projects/alpha-remover/src/__tests__/test_dir"
 );
 
 module.exports = {
   main
 };
+
 /**
  
  
