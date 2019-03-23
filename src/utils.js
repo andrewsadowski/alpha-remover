@@ -22,3 +22,7 @@ const isDirOrFile = content => {
 };
 
 const getFilesFromDir = dirPath => fs.readdirSync(dirPath);
+
+module.exports = {
+  getFilesFromDir
+};
