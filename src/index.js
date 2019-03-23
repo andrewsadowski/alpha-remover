@@ -5,16 +5,6 @@ const path = require("path");
 const { getFilesFromDir } = require("./utils.js");
 
 /**
- * Main thread
- */
-const main = pathToContent => {
-  const checkDeps = depCheck();
-  if (checkDeps) {
-    let filesArr = getFilesFromDir(pathToContent);
-  }
-};
-
-/**
  * Function checks if necessary dependencies are installed
  */
 const depCheck = () => {
@@ -31,7 +21,25 @@ const depCheck = () => {
   return isIMinstalled;
 };
 
-console.log(depCheck());
+// console.log(depCheck());
+
+/**
+ * Main thread
+ */
+const main = pathToContent => {
+  const checkDeps = depCheck();
+  if (checkDeps) {
+    let filesArr = getFilesFromDir(pathToContent);
+    filesArr.splice(filesArr.indexOf(".DS_Store"), 1);
+    console.log(filesArr);
+  }
+};
+
+console.log(
+  main(
+    "/Users/andrewsadowski/dev/node-projects/alpha-remover/src/__tests__/test_dir"
+  )
+);
 
 module.exports = {
   main
