@@ -1,6 +1,6 @@
-### Alpha-Remover
+# Alpha-Remover
 
-A CLI that takes an absolute path to a directory of .pngs, and removes the alpha-channel from all of them.
+A CLI that takes an absolute path to a directory of .pngs, and turns off the alpha-channel for all of them.
 
 ### Prerequisites
 
