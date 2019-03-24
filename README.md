@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img width="auto" height="auto" src="https://s3-us-west-2.amazonaws.com/andrew-sadowski-images/AlphaRemover.png">
+  <img width="auto" height="auto" src="https://s3-us-west-2.amazonaws.com/andrew-sadowski-images/AlphaRemover_Slim.png">
 
 </div>
 <br />
