@@ -1,13 +1,19 @@
 {
   "name": "alpha-remover",
-  "version": "1.0.0",
-  "description": "Remove alpha channel from pngs",
+  "version": "1.0.1",
+  "description": "Turn alpha channel off on directory of pngs",
   "url": "https://github.com/andrewsadowski/alpha-remover",
   "repository": "andrewsadowski/alpha-remover",
   "main": "src/cli.js",
   "bin": {
     "alphaRemover": "./bin/alpha-remover.js"
   },
+  "keywords": [
+    "alpha",
+    "channel",
+    "off",
+    "imageMagick"
+  ],
   "preferGlobal": true,
   "scripts": {
     "start": "nodemon src/cli.js --",

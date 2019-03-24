@@ -7,26 +7,29 @@ const { getFilesFromDir } = require("./utils.js");
 
 /**
  * Function checks if necessary dependencies are installed
+ * And if they are not, installs them
  */
 const depCheck = () => {
   let isIMinstalled;
+  let isBrewInstalled;
   if (!shell.which("brew")) {
     shell.echo("You need Homebrew to use this tool!");
     shell.exec(
       `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
     );
     shell.echo(`Homebrew was installed`);
+    isBrewInstalled = true;
+  } else {
+    isBrewInstalled = true;
   }
   if (!shell.which("convert")) {
     shell.echo("ImageMagick is being installed");
     shell.exec("brew install imageMagick", { silent: true });
     isIMinstalled = true;
-    // shell.exit(1);
   } else {
-    // shell.echo("imageMagick is installed");
     isIMinstalled = true;
   }
-  return isIMinstalled;
+  return isIMinstalled && isBrewInstalled ? true : false;
 };
 
 /**
@@ -52,7 +55,7 @@ const main = pathToContent => {
     });
     return console.log(
       chalk.blue(
-        `Alpha channel removed for all .png files\nin ${pathToContent}`
+        `Alpha channel turned off for all .png files in \n${pathToContent}`
       )
     );
   }
