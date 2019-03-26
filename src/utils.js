@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 /**
- *
+ * NOTE: For future single file parsing
  * @param {string} filePath - Takes a path as a string to parse
  * @return {string} subtitleFileName - Returns only the filename, removing path and file extension
  */
@@ -11,6 +11,10 @@ const getFileName = filePath => {
   return fileName;
 };
 
+/**
+ * NOTE: For future single file parsing
+ * @param {string} content - path to content, either single file or dir
+ */
 const isDirOrFile = content => {
   let typeOfContent;
   if (!path.extname(content)) {
