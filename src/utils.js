@@ -18,9 +18,9 @@ const getFileName = filePath => {
 const isDirOrFile = content => {
   let typeOfContent;
   if (!path.extname(content)) {
-    typeOfContent = "file";
-  } else {
     typeOfContent = "dir";
+  } else {
+    typeOfContent = "file";
   }
   return typeOfContent;
 };
@@ -33,5 +33,6 @@ const isDirOrFile = content => {
 const getFilesFromDir = dirPath => fs.readdirSync(dirPath);
 
 module.exports = {
-  getFilesFromDir
+  getFilesFromDir,
+  isDirOrFile
 };

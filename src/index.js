@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const chalk = require("chalk");
 
-const { getFilesFromDir } = require("./utils.js");
+const { getFilesFromDir, isDirOrFile } = require("./utils.js");
 
 /**
  * Function checks if necessary dependencies are installed
@@ -37,7 +37,7 @@ const depCheck = () => {
  */
 const main = pathToContent => {
   const checkDeps = depCheck();
-  const isFile;
+  const fileOrDif = isDirOrFile(pathToContent);
   if (checkDeps) {
     let filesArr = getFilesFromDir(pathToContent);
     filesArr.splice(filesArr.indexOf(".DS_Store"), 1);
