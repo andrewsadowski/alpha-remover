@@ -37,6 +37,7 @@ const depCheck = () => {
  */
 const main = pathToContent => {
   const checkDeps = depCheck();
+  const isFile;
   if (checkDeps) {
     let filesArr = getFilesFromDir(pathToContent);
     filesArr.splice(filesArr.indexOf(".DS_Store"), 1);
